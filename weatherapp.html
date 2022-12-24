@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css">
+     <script
+      src="https://kit.fontawesome.com/13a56190f8.js"
+      crossorigin="anonymous"
+    ></script>
+   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="body">
+    <div class="card">
+      <div class="card-body">
+        
+        <div class="card-text">
+         <form id='place' >
+          <input type="search" id='cities'placeholder="🗺️  Enter city...&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;" class="city">
+         <input type="submit" value="🔍Search" class="search">
+        </form></div>
+       
+<div class="container">
+<h1 id="townCity">Tallinn,Estonia </h1>
+<h3 id= date><em>Sunday<br/>
+October 16th,11:11 pm</em></h3></div>
+<div class="list">
+  
+<div class="description"><em><span id="percipitation">19</span></div>
+<div ><i class="fa-solid fa-wind"></i>Wind:<span id='wind'>5</span> m/s</div>
+<div ><i class="fa-solid fa-droplet"></i>Humidity:<span id="humidity">94</span>%</em></div>
+</div>
+<div class="icon">🌧️</div>
+
+      <div class="temperature" ><span id="temp">11</span>°C</div>
+    <div class="container-days">
+      <div class="row">
+        <div class="col-sm"><span class="weather">
+⛈️</span><br/>12°C<br/>Mon
+        </div>
+        <div class="col-sm"><span class="weather">🌧️</span><br/>10°C<br/>Tue</div>
+<div class="col-sm"><span class="weather">
+  🌦️</span><br/>7°C<br/>Wed</div>
+<div class="col-sm"><span class="weather">🌤️</span><br/>9°C<br/>Thu</div>
+<div class="col-sm"><span class="weather">🌥️</span><br/>9°C<br/>Fri</div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <script src="src/app.js">
+    </script>
+   
+</body>
+</html>

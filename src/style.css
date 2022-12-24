@@ -1,0 +1,84 @@
+body {
+  background-color: #74bdcb;
+}
+.card {
+  width: 1000px;
+  height: 610px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: white;
+  background: radial-gradient(
+    993px at 0.5% 98.5%,
+    rgb(0, 239, 247) 0%,
+    rgb(0, 122, 147) 46.7%,
+    rgb(0, 29, 72) 100.2%
+  );
+}
+.description {
+  font-size: 40px;
+  position: relative;
+  right: -35px;
+  font-style: italic;
+}
+
+.search {
+  height: 60px;
+  background-color: aliceblue;
+}
+.city {
+  width: 240px;
+  padding: 0;
+  padding: 1em;
+}
+.container,
+h1,
+h3 {
+  margin-top: 20px;
+  position: relative;
+  left: -10px;
+  top: 28px;
+  font-size: 45px;
+}
+
+.list {
+  position: relative;
+  right: -700px;
+  top: -11px;
+  font-weight: bold;
+  font-size: 25px;
+}
+.icon {
+  font-size: 170px;
+  position: relative;
+  top: -370px;
+  right: -350px;
+}
+.temperature {
+  font-size: 100px;
+  position: relative;
+  top: -590px;
+  right: -620px;
+  border: 1px white;
+  border-radius: 50%;
+  background-color: rgb(210, 240, 240);
+  padding: 20px;
+  width: 310px;
+  height: 190px;
+  text-align: center;
+  color: #3f5fff;
+}
+.col-sm {
+  position: relative;
+  top: -420px;
+  font-size: 30px;
+  border: 1px solid rgb(210, 240, 240);
+  border-radius: 100%;
+  padding: 20px 35px;
+  background-color: rgb(210, 240, 240);
+  text-align: center;
+  color: #3f5fff;
+}
+.weather {
+  font-size: 50px;
+}
