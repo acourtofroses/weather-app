@@ -2,9 +2,9 @@ body {
   background-color: #74bdcb;
 }
 .card {
-  width: 1000px;
-  height: 610px;
-  display: block;
+  max-width: 1000px;
+  max-height: 610px;
+  display: flex;
   margin: 0 auto;
   margin-top: 20px;
   color: white;
@@ -15,6 +15,7 @@ body {
     rgb(0, 29, 72) 100.2%
   );
 }
+
 .description {
   font-size: 40px;
   position: relative;
@@ -54,6 +55,7 @@ h3 {
   top: -370px;
   right: -350px;
 }
+
 .temperature {
   font-size: 100px;
   position: relative;
@@ -68,8 +70,13 @@ h3 {
   text-align: center;
   color: #3f5fff;
 }
+.row {
+  display: flex;
+}
 .col-sm {
   position: relative;
+  min-width: 100px;
+
   top: -420px;
   font-size: 30px;
   border: 1px solid rgb(210, 240, 240);
@@ -82,6 +89,15 @@ h3 {
 .weather {
   font-size: 50px;
 }
+.source {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 a:hover {
   cursor: pointer;
+}
+.source {
+  position: relative;
+  top: -400px;
 }
