@@ -42,6 +42,21 @@ function currentDate() {
 }
 currentDate();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `<div class="row">
+        <div class="col-sm"><span class="weather">
+⛈️</span><br/>12°C<br/>Mon
+        </div>
+        <div class="col-sm"><span class="weather">🌧️</span><br/>10°C<br/>Tue</div>
+<div class="col-sm"><span class="weather">
+  🌦️</span><br/>7°C<br/>Wed</div>
+<div class="col-sm"><span class="weather">🌤️</span><br/>9°C<br/>Thu</div>
+<div class="col-sm"><span class="weather">🌥️</span><br/>9°C<br/>Fri</div>
+<p class='source'><a href="https://github.com/acourtofroses/weather-app"target="_blank">Open-source code <a> by Mariia Huda </p>
+      </div>
+    </div>`;
+}
 function showWeather(response) {
   document.querySelector("#townCity").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -70,3 +85,4 @@ let search = document.querySelector("#place");
 search.addEventListener("submit", citySubmit);
 
 searchTown("Tallinn");
+displayForecast();
