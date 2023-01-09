@@ -41,39 +41,28 @@ function currentDate() {
   ${time}:${minutes}`;
 }
 currentDate();
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `<div class="row">
-        <div class="col-sm"><span class="weather">
-⛈️</span><br/>12°C<br/>Mon
-        </div>
-        <div class="col-sm"><span class="weather">🌧️</span><br/>10°C<br/>Tue</div>
-<div class="col-sm"><span class="weather">
-  🌦️</span><br/>7°C<br/>Wed</div>
-<div class="col-sm"><span class="weather">🌤️</span><br/>9°C<br/>Thu</div>
-<div class="col-sm"><span class="weather">🌥️</span><br/>9°C<br/>Fri</div>
-<p class='source'><a href="https://github.com/acourtofroses/weather-app"target="_blank">Open-source code <a> by Mariia Huda </p>
-      </div>
-    </div>`;
-}
 function showWeather(response) {
-  document.querySelector("#townCity").innerHTML = response.data.name;
+  document.querySelector("#townCity").innerHTML = response.data.city;
   document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#percipitation").innerHTML =
-    response.data.weather[0].main;
+    response.data.condition.description;
+  let descriptionIcon = document.querySelector("#icon");
+  descriptionIcon.setAttribute("src", response.data.condition.icon_url);
+  descriptionIcon.setAttribute("alt", response.data.condition.icon);
 }
 
 function searchTown(city) {
-  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "43404b5o63abt26b054d57526860b5f6";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+  console.log(apiUrl);
 }
 
 function citySubmit(event) {
@@ -85,4 +74,3 @@ let search = document.querySelector("#place");
 search.addEventListener("submit", citySubmit);
 
 searchTown("Tallinn");
-displayForecast();
