@@ -1,5 +1,5 @@
 body {
-  background-color: #74bdcb;
+  background: radial-gradient(rgb(87, 233, 237) 68%, rgb(51, 32, 116) 96%);
 }
 .card {
   max-width: 1000px;
@@ -8,12 +8,7 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   color: white;
-  background: radial-gradient(
-    993px at 0.5% 98.5%,
-    rgb(0, 239, 247) 0%,
-    rgb(0, 122, 147) 46.7%,
-    rgb(0, 29, 72) 100.2%
-  );
+  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
 .description {
@@ -25,12 +20,14 @@ body {
 
 .search {
   height: 60px;
-  background-color: aliceblue;
+  background-color: white;
 }
+
 .city {
   width: 240px;
   padding: 0;
   padding: 1em;
+  background-color: white;
 }
 .container,
 h1,
@@ -40,6 +37,10 @@ h3 {
   left: -10px;
   top: 28px;
   font-size: 45px;
+  color: #bbe4e9;
+}
+.description {
+  font-size: 35px;
 }
 
 .list {
@@ -47,7 +48,8 @@ h3 {
   right: -650px;
   top: -11px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
+  color: #bbe4e9;
 }
 .icon {
   width: 250px;
@@ -63,12 +65,12 @@ h3 {
   right: -620px;
   border: 1px white;
   border-radius: 50%;
-  background-color: rgb(210, 240, 240);
+  background-color: #bbe4e9;
   padding: 20px;
   width: 310px;
   height: 190px;
   text-align: center;
-  color: #3f5fff;
+  color: #00204a;
 }
 .row {
   display: flex;
@@ -77,13 +79,13 @@ h3 {
   position: relative;
   min-width: 30px;
   top: -420px;
-  font-size: 30px;
+  font-size: 35px;
   border: 1px solid rgb(210, 240, 240);
   border-radius: 100%;
   padding: 20px 35px;
-  background-color: rgb(210, 240, 240);
+  background-color: #bbe4e9;
   text-align: center;
-  color: #3f5fff;
+  color: #00204a;
 }
 
 .source {
