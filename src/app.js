@@ -41,7 +41,8 @@ function currentDate() {
   ${time}:${minutes}`;
 }
 currentDate();
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -60,7 +61,13 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "43404b5o63abt26b054d57526860b5f6";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function showWeather(response) {
   document.querySelector("#townCity").innerHTML = response.data.city;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -76,6 +83,7 @@ function showWeather(response) {
   let descriptionIcon = document.querySelector("#icon");
   descriptionIcon.setAttribute("src", response.data.condition.icon_url);
   descriptionIcon.setAttribute("alt", response.data.condition.icon);
+  getForecast(response.data.coordinates);
 }
 
 function searchTown(city) {
@@ -94,4 +102,3 @@ let search = document.querySelector("#place");
 search.addEventListener("submit", citySubmit);
 
 searchTown("Tallinn");
-displayForecast();
