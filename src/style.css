@@ -3,7 +3,7 @@ body {
 }
 .card {
   max-width: 1000px;
-  max-height: 610px;
+  max-height: 630px;
   display: block;
   margin: 0 auto;
   margin-top: 20px;
@@ -16,6 +16,7 @@ body {
   position: relative;
   right: 10px;
   font-style: italic;
+  font-size: 35px;
 }
 
 .search {
@@ -38,9 +39,6 @@ h3 {
   top: 28px;
   font-size: 45px;
   color: #bbe4e9;
-}
-.description {
-  font-size: 35px;
 }
 
 .list {
@@ -96,7 +94,7 @@ h3 {
 a:hover {
   cursor: pointer;
 }
-.source {
+p.source {
   position: relative;
-  top: -370px;
+  top: -390px;
 }
