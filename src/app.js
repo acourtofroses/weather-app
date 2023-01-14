@@ -41,22 +41,35 @@ function currentDate() {
   ${time}:${minutes}`;
 }
 currentDate();
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm">
-        <img src="" alt="" width="42">
-          <div class="this-day-temp">12°C </div>
-          <div class="forecast-day">${day}</div>
-        </div>
-        
-    `;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm">
+      <div class="forecast-day">${formatDay(forecastDay.time)}</div>
+        <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+          forecastDay.condition.icon
+        }.png" alt="" width="68">
+          <div class="this-day-temp">${Math.round(
+            forecastDay.temperature.maximum
+          )}°C
+  </div>
+          
+          
+        </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
