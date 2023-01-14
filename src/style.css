@@ -75,8 +75,7 @@ h3 {
 }
 .col-sm {
   position: relative;
-  min-width: 100px;
-
+  min-width: 30px;
   top: -420px;
   font-size: 30px;
   border: 1px solid rgb(210, 240, 240);
@@ -86,9 +85,7 @@ h3 {
   text-align: center;
   color: #3f5fff;
 }
-.weather {
-  font-size: 50px;
-}
+
 .source {
   display: flex;
   justify-content: center;

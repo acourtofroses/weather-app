@@ -41,6 +41,26 @@ function currentDate() {
   ${time}:${minutes}`;
 }
 currentDate();
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm">
+        <img src="" alt="" width="42">
+          <div class="this-day-temp">12°C </div>
+          <div class="forecast-day">${day}</div>
+        </div>
+        
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   document.querySelector("#townCity").innerHTML = response.data.city;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -74,3 +94,4 @@ let search = document.querySelector("#place");
 search.addEventListener("submit", citySubmit);
 
 searchTown("Tallinn");
+displayForecast();
